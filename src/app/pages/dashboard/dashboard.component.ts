@@ -26,19 +26,18 @@ export class DashboardComponent {
 
   constructor(private skillsService: SkillsService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.isLoading = true;
 
-    try {
-      const skills = await this.skillsService.getSkills();
-
+    this.skillsService.getSkills().then(skills => {
       this.cards = skills;
-    } catch (error) {
-      console.error('Erro ao carregar habilidades', error);
+    }).catch((err) => {
+      console.error('Erro ao carregar habilidades', err);
 
       alert('Erro ao carregar habilidades');
-    } finally {
+    }).finally(() => {
       this.isLoading = false;
-    }
+    });
+
   }
 }
