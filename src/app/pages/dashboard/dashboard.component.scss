@@ -1,0 +1,51 @@
+:host {
+  h1 {
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .cards {
+    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    min-height: 300px;
+    align-items: center;
+    // justify-content: space-between;
+    justify-content: center;
+
+    app-card {
+      display: flex;
+      justify-content: center;
+      flex: 1 1 calc(100% - 16px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 22px;
+    }
+
+    .cards {
+      margin-top: 18px;
+      app-card {
+        flex: 1 1 calc(50% - 16px);
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    .cards {
+      margin-top: 26px;
+
+      app-card {
+        flex: 1 1 calc(33.3% - 16px);
+      }
+    }
+  }
+}

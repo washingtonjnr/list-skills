@@ -1,0 +1,33 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{ card.name }}</mat-card-title>
+  </mat-card-header>
+
+  <div
+    class="box-img"
+    [ngStyle]="{ 'background-image': 'url(' + card.pic + ')' }"
+  ></div>
+
+  <mat-card-content>
+    <p>
+      {{ card.description }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <div class="btn-interaction" [ngClass]="getVariant(card.likes)">
+      <button (click)="onInteraction(card, 'like')">👍</button>
+
+      <span class="counter">{{ card.likes }}</span>
+
+      <button (click)="onInteraction(card, 'dislike')">👎</button>
+    </div>
+
+    <a
+      class="btn-link"
+      href="https://www.linkedin.com/in/washington-de-carvalho-51b0871b4/"
+      target="_blank"
+      >🔗</a
+    >
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,9 @@
+<h1>Skills</h1>
+
+<div class="cards">
+  @if (isLoading) {
+  <app-loading></app-loading>
+  } @else {
+  <app-card [card]="card" *ngFor="let card of cards"></app-card>
+  }
+</div>
